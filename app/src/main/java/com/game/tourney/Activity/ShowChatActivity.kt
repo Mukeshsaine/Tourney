@@ -1,6 +1,7 @@
 package com.game.tourney.Activity
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,7 +18,19 @@ class ShowChatActivity : AppCompatActivity() {
         binding = ActivityShowChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+        // Enable the "up" button (back button)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                // Handle the back button click
+                onBackPressed() // or use navController.navigateUp() if using Navigation Component
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

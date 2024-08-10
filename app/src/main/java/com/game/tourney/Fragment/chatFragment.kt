@@ -5,56 +5,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.game.tourney.Adapter.Adapter_Home
+import com.game.tourney.Adapter.ChatesAdapter
+import com.game.tourney.Models.HomeLoading
+import com.game.tourney.Models.chatsModels
 import com.game.tourney.R
+import com.game.tourney.databinding.FragmentChatBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [chatFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class chatFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    lateinit var binding: FragmentChatBinding
+    lateinit var adapter: ChatesAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false)
+        binding =  FragmentChatBinding.inflate(layoutInflater, container, false)
+
+        LoadingChats()
+        return binding.root
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment chatFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            chatFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun LoadingChats() {
+
+
+        val url = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.esportsku.com%2Fhow-to-create-a-teamcode-and-use-it-in-free-fire-ff%2F&psig=AOvVaw0dnsr66T2wOCxKAeMlz7lR&ust=1722514290876000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOji9Pfyz4cDFQAAAAAdAAAAABAE"
+        val items = listOf(
+            chatsModels("Title 1", "08:33 AP","free",url),
+            chatsModels("Title 1", "08:33 AP","free",url),
+            chatsModels("Title 1", "08:33 AP","free",url),
+            chatsModels("Title 1", "08:33 AP","free",url),
+            chatsModels("Title 1", "08:33 AP","free",url)
+        )
+
+        val adapter = context?.let { ChatesAdapter(items, it) }
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        binding.recyclerView.adapter = adapter
     }
 }
