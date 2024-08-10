@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.HomeFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All Games"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="PUBG"
+                android:backgroundTint="#66B5F4"
+                android:layout_weight="1"
+                android:id="@+id/homebtn"
+                android:layout_marginLeft="15dp"
+                app:cornerRadius="10dp"
+
+                />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="FREEFIRE"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:backgroundTint="#F46687"
+                app:cornerRadius="10dp"
+                android:layout_marginRight="15dp"
+
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="PUBG"
+                android:backgroundTint="#A6F47B"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                app:cornerRadius="10dp"
+
+                />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="FREEFIRE"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:backgroundTint="#F6C5D0"
+                app:cornerRadius="10dp"
+                android:layout_marginRight="15dp"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upcoming Events"
+            android:textColor="#000"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerView"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="Home" />
+    <item
+        android:id="@+id/ScoreBoard"
+        android:icon="@drawable/baseline_workspace"
+        android:title="ScoreBoard" />
+    <item
+        android:id="@+id/Clan"
+        android:icon="@drawable/baseline_hotel"
+        android:title="Clan" />
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/baseline_sms"
+        android:title="Chat" />
+    <item
+        android:id="@+id/Profile"
+        android:icon="@drawable/baseline_people"
+        android:title="Profile" />
+</menu>
