@@ -3,6 +3,7 @@ package com.game.tourney.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -34,7 +35,7 @@ class ChatesAdapter(private val list: List<chatsModels>):
     open class viewHolder(itemView: View): ViewHolder(itemView){
         val name: TextView = itemView.findViewById(R.id.name)
         val chats: TextView = itemView.findViewById(R.id.chat)
-        val Images: TextView = itemView.findViewById(R.id.imagePeople)
+        val Images: ImageView = itemView.findViewById(R.id.imagePeople)
         val date: TextView = itemView.findViewById(R.id.date)
     }
 }
